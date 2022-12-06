@@ -1,0 +1,14 @@
+server:
+  port: 9090
+spring:
+  profile:
+    active: local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: Customer_Management_Portal
+logging:
+  level:
+    org:
+      springframework: ERROR
