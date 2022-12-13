@@ -36,4 +36,11 @@ public class CustomerController {
     Mono<Void> deleteCustomerById(@RequestParam String id) {
         return this.customerService.deleteCustomerById(id);
     }
+
+    @GetMapping("/findByIdAndName")
+    public Mono<Customer> findByIdAndName(@RequestParam("Id") String id, @RequestParam("Name") String name) {
+        log.info("id and name :{}{}", id, name);
+
+        return this.customerService.findByIdAndName(id, name);
+    }
 }

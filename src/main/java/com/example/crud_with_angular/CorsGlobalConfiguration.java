@@ -1,6 +1,5 @@
 package com.example.crud_with_angular;
 
-import lombok.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
@@ -11,7 +10,6 @@ import java.util.List;
 
 @Configuration
 class CorsGlobalConfiguration {
-
     @Bean
     CorsWebFilter corsWebFilter() {
         var corsConfig = new CorsConfiguration();

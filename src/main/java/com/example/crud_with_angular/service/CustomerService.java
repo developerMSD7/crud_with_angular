@@ -14,4 +14,6 @@ public interface CustomerService {
 
     Mono<Void> deleteCustomerById(String id);
 
+    Mono<Customer> findByIdAndName(String id, String name);
+
 }

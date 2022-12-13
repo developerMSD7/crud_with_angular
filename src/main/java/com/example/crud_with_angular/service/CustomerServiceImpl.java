@@ -32,4 +32,9 @@ public class CustomerServiceImpl implements CustomerService {
     public Mono<Void> deleteCustomerById(String id) {
         return this.customerRepository.deleteById(id);
     }
+
+    @Override
+    public Mono<Customer> findByIdAndName(String id, String name) {
+        return this.customerRepository.findByIdOrName(id, name);
+    }
 }
