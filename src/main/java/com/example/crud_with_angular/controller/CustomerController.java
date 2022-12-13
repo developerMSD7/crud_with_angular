@@ -4,6 +4,8 @@ import com.example.crud_with_angular.model.Customer;
 import com.example.crud_with_angular.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -38,9 +40,8 @@ public class CustomerController {
     }
 
     @GetMapping("/findByIdAndName")
-    public Mono<Customer> findByIdAndName(@RequestParam("Id") String id, @RequestParam("Name") String name) {
-        log.info("id and name :{}{}", id, name);
+    public ResponseEntity<Mono<Customer>> findByIdAndName(@RequestParam("Id") String id, @RequestParam("Name") String name) {
+        return new ResponseEntity<>(this.customerService.findByIdAndName(id, name), HttpStatus.OK);
 
-        return this.customerService.findByIdAndName(id, name);
     }
 }

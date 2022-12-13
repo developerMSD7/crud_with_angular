@@ -11,4 +11,8 @@ spring:
 logging:
   level:
     org:
-      springframework: ERROR
+      springframework:
+        data:
+          mongodb:
+            core:
+              ReactiveMongoTemplate: DEBUG

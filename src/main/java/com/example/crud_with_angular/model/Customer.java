@@ -1,16 +1,16 @@
 package com.example.crud_with_angular.model;
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.List;
 
 @Data
-@Document("Customer")
+@Document(collection = "Customer")
 public class Customer {
 
-    @Id
+    @MongoId
     private String id;
     private String name;
     private String phone;
